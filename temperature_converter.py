@@ -14,7 +14,11 @@ elif convert == "":
     print ("Sorry no value is detected")
     exit()
 val = input("Enter a value C/F/K: ")
-val_1 = float(val)
+try:
+    val_1 = float(val)
+except ValueError:
+    print("Sorry string cannot be used")
+    exit()
 if convert == "C to F":
     converted = val_1 * 9 / 5 + 32
     print (f"{round (converted, 2)}\u00B0F")
